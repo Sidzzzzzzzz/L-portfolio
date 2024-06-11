@@ -1,0 +1,316 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+}
+.hi {
+	height: 100%;
+	width: 100%;
+	background-color: #111011;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.hu {
+	height: 730px;
+	width: 350px;
+	background-color: #212121;
+	border-radius: 6px;
+	padding: 10px;
+	overflow: hidden;
+}
+img {
+	width: 100%;
+	height: 350px;
+	border-radius: 6px;
+}
+h4 {
+	text-align: center;
+	justify-content: center;
+	color: #fff;
+	font-weight: 200;
+}
+h2{
+	text-align: center;
+	margin-top: 10px;
+	justify-content: center;
+	color: #fff;
+}
+.spark {
+	position: absolute;
+	height: 40px;
+	width: 40px;
+	background-color: 
+	transform: translate (0px, -20px);
+}
+.spark span {
+	position: absolute;
+	width: 2px;
+	height: 20px;
+	pointer-events: none;
+	transform-origin: bottom;
+	overflow: hidden;
+	background: #0f0;
+	filter: drop-shadow(0 0 20px #0f0) drop-shadow(0 0 20px #0f0);
+}
+.spark span::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #0f0;
+	animation: animate 1s ease-in-out forwards;
+}
+@keyframes animate 
+{
+	0% 
+	{
+	transform: translateY(100%);
+	}
+	100% 
+	{
+	transform: translateY(-100%);
+	}
+}
+.animated-text{
+    font-size: 32px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.animated-text span{
+    position: relative;
+    text-shadow: 0 0 10px #0ef;
+}
+
+.animated-text span::before{
+    content: "Youtuber";
+    color: #0ef;
+    animation: words 20s infinite;
+}
+
+.animated-text span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background-color: #212121;
+    border-left: 2px solid #0ef;
+    right: -8px;
+    text-shadow: 0 0 10px #0ef;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 2px solid #0ef;
+    }
+}
+
+@keyframes words {
+    0%,20%{
+        content: "Coder";
+    }
+    21%,40%{
+        content: "Modder";
+    }
+    41%,60%{
+        content: "Hacker";
+    }
+    61%,80%{
+        content: "Blogger";
+    }
+    81%,100%{
+        content: "Gamer";
+    }
+}
+
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+}
+.hu p {
+	padding: 30px 10px;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 200;
+	font-size: 12px;
+}
+.parent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.child {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.child:hover {
+  background-color: #f6eeee;
+  background-position: -100px 100px, -100px 100px;
+  transform: rotate3d(0.5, 1, 0, 30deg);
+  transform: perspective(180px) rotateX(60deg) translateY(2px);
+  box-shadow: 0px 10px 10px rgb(1, 49, 182);
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+}
+
+.button:hover {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate3d(0px, 0px, 15px) perspective(180px) rotateX(-35deg) translateY(2px);
+  border-radius: 50%;
+}
+#preloader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100vh;
+	width: 100%;
+	z-index: 99999;
+	display: flex
+}
+
+#preloader:after,
+#preloader:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	z-index: -1;
+	background-color: #fff;
+	-webkit-transition: all .3s ease 0s;
+	-o-transition: all .3s ease 0s;
+	transition: all .3s ease 0s
+}
+
+#preloader:after {
+	left: auto;
+	right: 0
+}
+
+#preloader .loader_line {
+	margin: auto;
+	width: 1px;
+	height: 250px;
+	position: relative;
+	overflow: hidden;
+	-webkit-transition: all .8s ease 0s;
+	-o-transition: all .8s ease 0s;
+	transition: all .8s ease 0s
+}
+
+.loader_line:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 1px;
+	height: 0%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	background-color: #000;
+	-webkit-animation: lineheight 1s ease-in-out 0s forwards;
+	-o-animation: lineheight 1s ease-in-out 0s forwards;
+	animation: lineheight 1s ease-in-out 0s forwards
+}
+
+.loader_line:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1px;
+	height: 100%;
+	background-color: #bbb;
+	-webkit-transform: translateY(-100%);
+	-ms-transform: translateY(-100%);
+	-o-transform: translateY(-100%);
+	transform: translateY(-100%);
+	-webkit-animation: lineround 1.2s linear 0s infinite;
+	-o-animation: lineround 1.2s linear 0s infinite;
+	animation: lineround 1.2s linear 0s infinite;
+	animation-delay: 2s
+}
+
+@keyframes lineheight {
+	0% {
+		height: 0%
+	}
+
+	100% {
+		height: 100%
+	}
+}
+
+@keyframes lineround {
+	0% {
+		-webkit-transform: translateY(-100%);
+		-ms-transform: translateY(-100%);
+		-o-transform: translateY(-100%);
+		transform: translateY(-100%)
+	}
+
+	100% {
+		-webkit-transform: translateY(200%);
+		-ms-transform: translateY(200%);
+		-o-transform: translateY(200%);
+		transform: translateY(200%)
+	}
+}
+
+.preloaded .loader_line:after {
+	opacity: 0
+}
+
+.preloaded .loader_line {
+	opacity: 0;
+	height: 100% !important
+}
+
+.preloaded:after,
+.preloaded:before {
+	-webkit-animation: preloadedzero .3s ease-in-out .5s forwards;
+	-o-animation: preloadedzero .3s ease-in-out .5s forwards;
+	animation: preloadedzero .3s ease-in-out .5s forwards
+}
+
+@keyframes preloadedzero {
+	0% {
+		width: 50%
+	}
+
+	100% {
+		width: 0%
+	}
+}
